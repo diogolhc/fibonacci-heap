@@ -1,0 +1,6 @@
+.vscode
+*.out
+*.dot
+*.svg
+*.png
+!example/*
