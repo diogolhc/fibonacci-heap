@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <list>
+#include <math.h>
 
 typedef long long int lli;
 #define GOLDEN_RATIO_ROUND_DOWN 1.618
@@ -44,9 +45,16 @@ public:
 
 template<class T>
 class FibonacciHeap {
+private:
+    // Copy constructor and assignment operator are not implemented
+    // Hiding them to avoid misusage (Rule of three)
+    // Since the point here is show the algorithmic part of the data structure
+    FibonacciHeap(const FibonacciHeap<T> &other);
+    FibonacciHeap<T> &operator=(const FibonacciHeap<T> &other);
+
 protected:
-    Element<T> *min = nullptr;
-    lli n = 0;
+    Element<T> *min;
+    lli n;
 
     lli _D(lli n) {
         return log(n)/log(GOLDEN_RATIO_ROUND_DOWN);
@@ -187,6 +195,11 @@ protected:
     }
 
 public:
+    FibonacciHeap() {
+        this->min = nullptr;
+        this->n = 0;
+    };
+
     ~FibonacciHeap() {
         if (this->min != nullptr) {
             this->_deleteAll(this->min);

@@ -1,7 +1,4 @@
-#include <bits/stdc++.h>
 #include "FibonacciHeap/FibonacciHeapViz.hpp"
-
-using namespace std;
 
 int main() {
     FibonacciHeapViz<int> heap;

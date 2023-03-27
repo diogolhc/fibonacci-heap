@@ -2,6 +2,7 @@
 #define FIBONACCI_HEAP_VIZ_HPP
 
 #include <list>
+#include <iostream>
 #include "FibonacciHeap.hpp"
 
 template<class T>
